@@ -6,14 +6,14 @@ func _ready():
 	
 	var array := ["a", "b", "c", "d"]
 	# 陣列取一個
-	# random one
+	# random one item
 	print("array random one : ", RngUtils.array(array))
 	
 	# 陣列取四個，可重複
-	# random four (not unique)
+	# random four items(not unique)
 	print("array random four (not unique) : ", RngUtils.array(array, 4))
 	# 陣列取四個，不可重複
-	# random four (unique)
+	# random four items(unique)
 	print("array random four (unique) : ", RngUtils.array(array, 4, true))
 	
 	var sum_weighted: Dictionary = {}
@@ -27,9 +27,15 @@ func _ready():
 			{"value":"d", "weight": 40.0},
 			{"value":"e", "weight": 25.0},
 		]
+		
+		# 陣列取四個，可重複
+		# random four items(not unique)
 		var random_weights: Array[Dictionary] = RngUtils.array_with_weighted(weights, 4)
-		var random_unique_weights: Array[Dictionary] = RngUtils.array_with_weighted(weights, 4, true)
 		print("random_weights : ", random_weights)
+		
+		# 陣列取四個，不可重複
+		# random four items(unique)
+		var random_unique_weights: Array[Dictionary] = RngUtils.array_with_weighted(weights, 4, true)
 		print("random_unique_weights : ", random_unique_weights)
 		
 		# 計算次數
