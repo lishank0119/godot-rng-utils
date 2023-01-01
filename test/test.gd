@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	
 	print("int_range 1~100 : ", RngUtils.int_range(1, 100))
 	print("float_range 0.1~5.1 : ", RngUtils.float_range(0.1, 5.1))
 	
@@ -34,7 +35,7 @@ func _ready():
 		print("random_weights : ", random_weights)
 		
 		# 陣列取四個，不可重複
-		# random four items(unique)
+		#random four items(unique)
 		var random_unique_weights: Array[Dictionary] = RngUtils.array_with_weighted(weights, 4, true)
 		print("random_unique_weights : ", random_unique_weights)
 		
@@ -50,9 +51,9 @@ func _ready():
 	var percentage: Dictionary = {}
 	for key in sum_weighted.keys():
 		percentage[key] = float(sum_weighted[key]) / 400.0 * 100
-	print("random four (not unique) percentage : ", percentage)
+	print("random_weights four (not unique) percentage : ", percentage)
 	
 	var weighted_percentage: Dictionary = {}
 	for key in sum_unique_weighted.keys():
 		weighted_percentage[key] = float(sum_unique_weighted[key]) / 400.0 * 100.0
-	print("random four (unique) percentage : ", weighted_percentage)
+	print("random_weights four (unique) percentage : ", weighted_percentage)
